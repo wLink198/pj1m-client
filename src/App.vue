@@ -59,8 +59,8 @@
         <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
           <!-- Search -->
           <div class="header_search">
-            <form action="#" id="header_search_form">
-              <input type="text" class="search_input" placeholder="Search Item" required="required">
+            <form @submit.prevent="searchProd">
+              <input @keyup.enter="searchProd" v-model="search" type="text" class="search_input" placeholder="Search Item" required="required">
               <button class="header_search_button"><img src="/images/search.png" alt=""></button>
             </form>
           </div>
@@ -207,6 +207,7 @@ export default {
 				Checkout: 'checkout',
 			},
 			currentPage: '',
+			search: ''
 		}
 	},
 	created: function() {
@@ -219,6 +220,17 @@ export default {
 		getCurrentPage() {
 			var url = new URL(window.location).pathname;
 			this.currentPage = url.split("/")[1];
+		},
+		searchProd() {
+			if (!this.search) return;
+			
+			this.$http.get(`${this.baseUrl}/mobile?search=${this.search}`)
+			.then(res => {
+				console.log(res);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
 		}
 	}
 }

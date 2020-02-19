@@ -163,6 +163,9 @@ export default {
 		.then(res => {
 			this.product = res.data;
 		})
+		.catch(function (error) {
+			console.log(error);
+		});
 	},
 }
 </script>
