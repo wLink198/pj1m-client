@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
+import Contact from '../views/Contact.vue'
 import Product from '../views/Product.vue'
 import Cart from '../views/Cart.vue'
 import Checkout from '../views/Checkout.vue'
@@ -14,7 +15,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: 'Home'
+      title: 'Trang chủ'
     }
   },
   {
@@ -22,21 +23,29 @@ const routes = [
     name: 'About',
     component: About,
     meta: {
-      title: 'About'
+      title: 'Giới thiệu'
+    }
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact,
+    meta: {
+      title: 'Liên hệ'
     }
   },
   {
     path: '/product/:id',
     component: Product,
     meta: {
-      title: 'Product'
+      title: 'Sản phẩm'
     }
   },
   {
     path: '/cart',
     component: Cart,
     meta: {
-      title: 'Cart'
+      title: 'Giỏ hàng'
     }
   },
   {

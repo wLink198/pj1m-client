@@ -44,7 +44,7 @@
           <router-link :to="'/'">
             <div class="d-flex flex-row align-items-center justify-content-start">
               <div><img src="/images/logo_1.png" alt=""></div>
-              <div>Little Closet</div>
+              <div>Little Shop</div>
             </div>
           </router-link>	
         </div>
@@ -200,11 +200,10 @@ export default {
 	data() {
 		return {
 			pages: {
-				Home: '',
-				Contact: 'contact',
-				About: 'about',
-				Cart: 'cart',
-				Checkout: 'checkout',
+				'Trang chủ': '',
+				'Liên hệ': 'contact',
+				'Giới thiệu': 'about',
+				'Giỏ hàng': 'cart'
 			},
 			currentPage: '',
 			search: ''
